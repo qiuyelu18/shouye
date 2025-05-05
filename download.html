@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下载页面</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .download-section {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 20px;
+        }
+        
+        .download-button {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 12px 25px;
+            background-color: #2ecc71;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .download-button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>下载我们的应用</h1>
+        </header>
+        
+        <main>
+            <a href="index.html" class="back-button">← 返回首页</a>
+            
+            <div class="download-section">
+                <h2>选择您的平台</h2>
+                <p>请选择适合您设备的版本下载安装</p>
+                
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-icon">📱</div>
+                        <h2>安卓版</h2>
+                        <p>适用于安卓手机和平板</p>
+                        <a href="#" class="download-button">下载安卓版</a>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">💻</div>
+                        <h2>Windows版</h2>
+                        <p>适用于Windows电脑</p>
+                        <a href="#" class="download-button">下载Windows版</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 版权所有</p>
+        </footer>
+    </div>
+</body>
+</html> 
