@@ -1,1 +1,43 @@
- 
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎页面</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>欢迎使用</h1>
+        </header>
+        
+        <main>
+            <div class="card-container">
+                <div class="card" id="download-card">
+                    <div class="card-icon">📥</div>
+                    <h2>下载</h2>
+                    <p>点击这里下载我们的应用</p>
+                    <button class="btn" onclick="window.location.href='download.html'">立即下载</button>
+                </div>
+                
+                <div class="card" id="tutorial-card">
+                    <div class="card-icon">🎬</div>
+                    <h2>视频教程</h2>
+                    <p>查看如何使用我们的应用</p>
+                    <div class="tutorial-options">
+                        <button class="btn" onclick="window.location.href='android-tutorial.html'">安卓教程</button>
+                        <button class="btn" onclick="window.location.href='pc-tutorial.html'">电脑教程</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 版权所有</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
