@@ -6,15 +6,23 @@
     <title>电脑教程</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        .tutorial-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .tutorial-intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
         .video-container {
             position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9比例 */
-            height: 0;
-            margin: 30px 0;
-            background-color: var(--background-color);
-            border-radius: 10px;
             overflow: hidden;
+            padding-top: 56.25%; /* 16:9 宽高比 */
+            margin: 30px 0;
+            background-color: #f1f1f1;
+            border-radius: 10px;
         }
         
         .video-placeholder {
@@ -26,81 +34,131 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: var(--background-color);
-            color: var(--text-light);
-            font-size: 1.2rem;
+            flex-direction: column;
         }
         
-        .step {
+        .video-placeholder img {
+            max-width: 80px;
             margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
         }
         
-        .step:last-child {
+        .tutorial-steps {
+            margin-top: 40px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tutorial-step {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .tutorial-step:last-child {
             border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
         
-        .step h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .code-example {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            overflow-x: auto;
+            margin: 10px 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header class="site-header">
-            <h1 class="site-title">电脑版使用教程</h1>
-            <p class="site-subtitle">轻松学会使用我们的应用</p>
+        <header>
+            <h1>电脑使用教程</h1>
         </header>
         
-        <a href="index.html" class="link-card" style="width: 120px; margin-bottom: 30px;">
-            <div class="link-card-icon">←</div>
-            <div class="link-card-text">返回首页</div>
-        </a>
-        
-        <section class="section">
-            <h2 class="section-title">如何使用我们的电脑应用</h2>
-            <div class="section-content">
-                <p>跟随以下视频和步骤，快速掌握使用技巧</p>
+        <main>
+            <div class="tutorial-container">
+                <div class="tutorial-intro">
+                    <h2>如何在电脑上使用</h2>
+                    <p>通过以下视频和步骤指南，您可以轻松地在Windows电脑上使用我们的应用</p>
+                </div>
                 
                 <div class="video-container">
-                    <!-- 这里替换成真实的视频嵌入代码 -->
-                    <div class="video-placeholder">视频教程将在此处显示</div>
+                    <div class="video-placeholder">
+                        <div class="card-icon">🎬</div>
+                        <p>视频教程</p>
+                    </div>
                 </div>
                 
                 <div class="tutorial-steps">
-                    <div class="step">
-                        <h3>1. 下载并安装程序</h3>
-                        <p>从我们的官网下载Windows版安装包，双击运行并按照提示完成安装。</p>
+                    <h3>步骤说明</h3>
+                    
+                    <div class="tutorial-step">
+                        <h4><span class="step-number">1</span> 下载安装</h4>
+                        <p>从下载页面获取最新的Windows安装包(.exe)，双击运行安装程序。按照安装向导提示完成安装过程。</p>
                     </div>
                     
-                    <div class="step">
-                        <h3>2. 启动程序</h3>
-                        <p>从桌面或开始菜单找到程序图标并点击启动，然后进行初始设置。</p>
+                    <div class="tutorial-step">
+                        <h4><span class="step-number">2</span> 启动程序</h4>
+                        <p>安装完成后，您可以通过桌面快捷方式或开始菜单启动程序。首次启动可能需要管理员权限。</p>
                     </div>
                     
-                    <div class="step">
-                        <h3>3. 界面介绍</h3>
-                        <p>了解程序的菜单栏、工具栏和主要功能区域。</p>
+                    <div class="tutorial-step">
+                        <h4><span class="step-number">3</span> 配置设置</h4>
+                        <p>初次使用，您需要进行基本配置。点击"设置"按钮，根据需要调整各项参数。</p>
+                        <div class="code-example">
+                            设置 > 常规 > 语言选择：简体中文<br>
+                            设置 > 性能 > 启动时自动运行：开启
+                        </div>
                     </div>
                     
-                    <div class="step">
-                        <h3>4. 基本操作</h3>
-                        <p>学习如何使用软件的基本功能和常用操作。</p>
-                    </div>
-                    
-                    <div class="step">
-                        <h3>5. 高级功能</h3>
-                        <p>探索更多高级功能和自定义设置选项。</p>
+                    <div class="tutorial-step">
+                        <h4><span class="step-number">4</span> 常见问题解决</h4>
+                        <p>如果遇到程序无法启动的情况，可以尝试以下解决方法：</p>
+                        <ul>
+                            <li>以管理员身份运行程序</li>
+                            <li>检查是否安装了最新的.NET Framework</li>
+                            <li>关闭杀毒软件后再启动程序</li>
+                        </ul>
                     </div>
                 </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="index.html" class="back-link">返回首页</a>
+                </div>
             </div>
-        </section>
+        </main>
         
-        <footer class="site-footer">
-            <p>&copy; 2024 版权所有</p>
+        <footer>
+            <p>&copy; 2023 版权所有</p>
         </footer>
     </div>
+    
+    <script src="script.js"></script>
 </body>
 </html> 

@@ -7,65 +7,82 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .download-section {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .download-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
             margin-top: 30px;
         }
         
-        .download-button {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 25px;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s;
+        .download-option {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
-        .download-button:hover {
-            background-color: var(--primary-dark);
-            transform: scale(1.05);
+        .download-btn {
+            background-color: #27ae60;
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            margin-top: 10px;
+        }
+        
+        .download-btn:hover {
+            background-color: #219653;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header class="site-header">
-            <h1 class="site-title">下载中心</h1>
-            <p class="site-subtitle">选择适合您的版本</p>
+        <header>
+            <h1>下载页面</h1>
         </header>
         
-        <a href="index.html" class="link-card" style="width: 120px; margin-bottom: 30px;">
-            <div class="link-card-icon">←</div>
-            <div class="link-card-text">返回首页</div>
-        </a>
-        
-        <section class="section">
-            <h2 class="section-title">选择您的平台</h2>
-            <div class="section-content">
-                <p>请选择适合您设备的版本下载安装</p>
+        <main>
+            <div class="download-section">
+                <h2>选择下载版本</h2>
+                <p>请选择适合您设备的版本进行下载</p>
                 
-                <div class="link-cards download-section">
-                    <div class="link-card" style="flex-direction: column; text-align: center;">
-                        <div class="link-card-icon" style="font-size: 3rem; margin: 0 0 15px 0;">📱</div>
-                        <div class="link-card-text" style="margin-bottom: 10px;">安卓版</div>
-                        <p style="margin-bottom: 15px; font-size: 0.9rem; color: var(--text-light);">适用于安卓手机和平板</p>
-                        <a href="#" class="download-button">下载安卓版</a>
+                <div class="download-options">
+                    <div class="download-option">
+                        <h3>安卓版本</h3>
+                        <p>适用于安卓手机和平板</p>
+                        <button class="btn download-btn">下载安卓版(.apk)</button>
                     </div>
                     
-                    <div class="link-card" style="flex-direction: column; text-align: center;">
-                        <div class="link-card-icon" style="font-size: 3rem; margin: 0 0 15px 0;">💻</div>
-                        <div class="link-card-text" style="margin-bottom: 10px;">Windows版</div>
-                        <p style="margin-bottom: 15px; font-size: 0.9rem; color: var(--text-light);">适用于Windows电脑</p>
-                        <a href="#" class="download-button">下载Windows版</a>
+                    <div class="download-option">
+                        <h3>Windows版本</h3>
+                        <p>适用于Windows 7/8/10/11</p>
+                        <button class="btn download-btn">下载Windows版(.exe)</button>
                     </div>
                 </div>
+                
+                <a href="index.html" class="back-link">返回首页</a>
             </div>
-        </section>
+        </main>
         
-        <footer class="site-footer">
-            <p>&copy; 2024 版权所有</p>
+        <footer>
+            <p>&copy; 2023 版权所有</p>
         </footer>
     </div>
+    
+    <script src="script.js"></script>
 </body>
 </html> 

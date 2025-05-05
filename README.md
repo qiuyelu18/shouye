@@ -1,49 +1,54 @@
-# 现代导航首页
+# 简易导航页面
 
-这是一个现代化的淡紫色单页式网站首页，用于帮助用户导航到不同的页面：
-- 下载页面（安卓和电脑版本）
-- 视频教程页面（分为安卓和电脑教程）
-
-## 设计特点
-
-- 现代简约的单页式设计
-- 淡紫色主题
-- 响应式布局，适配各种设备
-- 简洁的导航栏
-- 独立的内容区块
-- 友好的用户交互效果
+这是一个简单的导航页面，用于引导用户到下载页面或查看视频教程。
 
 ## 文件结构
 
-- `index.html` - 主页面（单页式设计）
-- `styles.css` - 全局样式表
-- `download.html` - 下载页面
-- `android-tutorial.html` - 安卓教程页面
-- `pc-tutorial.html` - 电脑教程页面
+```
+.
+├── index.html          # 首页
+├── styles.css          # 主样式文件
+├── script.js           # JavaScript脚本
+├── download.html       # 下载页面
+├── android-tutorial.html # 安卓教程页面
+├── pc-tutorial.html    # 电脑教程页面
+└── README.md           # 说明文件
+```
 
-## 如何使用
+## 使用GitHub Pages部署
 
-这个网站设计用于GitHub Pages托管。您可以按照以下步骤部署：
+1. 在GitHub上创建新仓库
+2. 将所有文件上传到仓库
+3. 进入仓库设置 (Settings)
+4. 找到"Pages"选项
+5. 在"Source"下选择"main"分支
+6. 点击"保存"
 
-1. 将所有文件上传到您的GitHub仓库
-2. 启用GitHub Pages功能
-3. 选择分支和目录（通常是`main`分支和根目录）
-4. 保存设置，GitHub会提供您的网站URL
+几分钟后，您的网站将可通过`https://[你的用户名].github.io/[仓库名]`访问。
 
-## 自定义指南
+## 自定义
 
-您可以根据需要自定义网站：
+您可以根据需要修改以下文件：
 
-- 修改`styles.css`中的`:root`变量来更改颜色主题
-- 替换视频教程页面中的视频链接
-- 在下载页面添加实际的下载链接
-- 添加额外的页面或功能区块
+- `index.html`: 更改首页内容和布局
+- `styles.css`: 修改网站样式和主题颜色
+- `download.html`: 更新下载链接
+- `android-tutorial.html`和`pc-tutorial.html`: 添加实际的视频链接和教程内容
 
-## 技术实现
+## 添加视频
 
-这个网站使用以下技术：
-- HTML5
-- CSS3（使用自定义变量实现主题）
-- 纯CSS实现的动画和过渡效果
+要添加视频，请在各教程页面的`video-container`中插入YouTube或其他视频平台的嵌入代码。例如：
 
-设计参考了现代简约风格，主题色为淡紫色，整体布局采用单页滚动式设计。 
+```html
+<div class="video-container">
+    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+```
+
+## 更新下载链接
+
+在`download.html`中，更新下载按钮的链接：
+
+```html
+<button class="btn download-btn" onclick="window.location.href='你的下载链接'">下载安卓版(.apk)</button>
+``` 

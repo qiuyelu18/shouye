@@ -6,38 +6,23 @@
     <title>安卓教程</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        .tutorial-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .tutorial-intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
         .video-container {
             position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9比例 */
-            height: 0;
-            margin: 30px 0;
-            background-color: var(--background-color);
-            border-radius: 10px;
             overflow: hidden;
-        }
-        
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .step {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .step:last-child {
-            border-bottom: none;
-        }
-        
-        .step h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
+            padding-top: 56.25%; /* 16:9 宽高比 */
+            margin: 30px 0;
+            background-color: #f1f1f1;
+            border-radius: 10px;
         }
         
         .video-placeholder {
@@ -49,61 +34,113 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: var(--background-color);
-            color: var(--text-light);
-            font-size: 1.2rem;
+            flex-direction: column;
+        }
+        
+        .video-placeholder img {
+            max-width: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .tutorial-steps {
+            margin-top: 40px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tutorial-step {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .tutorial-step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header class="site-header">
-            <h1 class="site-title">安卓版使用教程</h1>
-            <p class="site-subtitle">轻松学会使用我们的应用</p>
+        <header>
+            <h1>安卓使用教程</h1>
         </header>
         
-        <a href="index.html" class="link-card" style="width: 120px; margin-bottom: 30px;">
-            <div class="link-card-icon">←</div>
-            <div class="link-card-text">返回首页</div>
-        </a>
-        
-        <section class="section">
-            <h2 class="section-title">如何使用我们的安卓应用</h2>
-            <div class="section-content">
-                <p>跟随以下视频和步骤，快速掌握使用技巧</p>
+        <main>
+            <div class="tutorial-container">
+                <div class="tutorial-intro">
+                    <h2>如何在安卓设备上使用</h2>
+                    <p>通过以下视频和步骤指南，您可以轻松地在安卓设备上使用我们的应用</p>
+                </div>
                 
                 <div class="video-container">
-                    <!-- 这里替换成真实的视频嵌入代码 -->
-                    <div class="video-placeholder">视频教程将在此处显示</div>
+                    <div class="video-placeholder">
+                        <div class="card-icon">🎬</div>
+                        <p>视频教程</p>
+                    </div>
                 </div>
                 
                 <div class="tutorial-steps">
-                    <div class="step">
-                        <h3>1. 下载并安装应用</h3>
-                        <p>从应用商店或我们的官网下载应用，然后按照提示完成安装。</p>
+                    <h3>步骤说明</h3>
+                    
+                    <div class="tutorial-step">
+                        <h4><span class="step-number">1</span> 下载安装</h4>
+                        <p>从下载页面获取最新的APK安装包，点击安装。如果提示"未知来源"，请在设置中允许安装。</p>
                     </div>
                     
-                    <div class="step">
-                        <h3>2. 注册/登录账号</h3>
-                        <p>打开应用后，注册一个新账号或使用已有账号登录。</p>
+                    <div class="tutorial-step">
+                        <h4><span class="step-number">2</span> 打开应用</h4>
+                        <p>安装完成后，点击应用图标打开。首次使用可能需要接受权限请求。</p>
                     </div>
                     
-                    <div class="step">
-                        <h3>3. 浏览功能</h3>
-                        <p>了解应用的主要功能区域和操作方式。</p>
+                    <div class="tutorial-step">
+                        <h4><span class="step-number">3</span> 基本使用</h4>
+                        <p>应用打开后，您可以看到主界面。在这里您可以浏览所有功能选项。</p>
                     </div>
                     
-                    <div class="step">
-                        <h3>4. 开始使用</h3>
-                        <p>按照您的需求开始使用应用的各项功能。</p>
+                    <div class="tutorial-step">
+                        <h4><span class="step-number">4</span> 高级功能</h4>
+                        <p>熟悉基本功能后，您可以尝试使用更多高级功能，如数据备份、自定义设置等。</p>
                     </div>
                 </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="index.html" class="back-link">返回首页</a>
+                </div>
             </div>
-        </section>
+        </main>
         
-        <footer class="site-footer">
-            <p>&copy; 2024 版权所有</p>
+        <footer>
+            <p>&copy; 2023 版权所有</p>
         </footer>
     </div>
+    
+    <script src="script.js"></script>
 </body>
 </html> 
