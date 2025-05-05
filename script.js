@@ -1,25 +1,57 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 卡片悬停效果增强
-    const cards = document.querySelectorAll('.card');
+    // 添加滚动动画效果
+    const scrollElements = document.querySelectorAll('.feature-card, .option-card, .section-title');
     
-    cards.forEach(card => {
-        card.addEventListener('mouseover', function() {
-            this.style.transform = 'translateY(-15px)';
-            this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.2)';
-        });
-        
-        card.addEventListener('mouseout', function() {
-            this.style.transform = 'translateY(-10px)';
-            this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.15)';
-        });
+    const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+            elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+        );
+    };
+    
+    const elementOutofView = (el) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+            elementTop > (window.innerHeight || document.documentElement.clientHeight)
+        );
+    };
+    
+    const displayScrollElement = (element) => {
+        element.classList.add('scrolled');
+    };
+    
+    const hideScrollElement = (element) => {
+        element.classList.remove('scrolled');
+    };
+    
+    const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+            if (elementInView(el, 1.25)) {
+                displayScrollElement(el);
+            } else if (elementOutofView(el)) {
+                hideScrollElement(el)
+            }
+        })
+    }
+    
+    // 初始化时添加类
+    scrollElements.forEach(el => {
+        el.classList.add('animate-on-scroll');
     });
     
-    // 添加按钮点击效果
+    // 立即调用一次处理动画，显示视口中的元素
+    setTimeout(handleScrollAnimation, 100);
+    
+    // 监听滚动事件
+    window.addEventListener('scroll', () => {
+        handleScrollAnimation();
+    });
+    
+    // 按钮涟漪效果
     const buttons = document.querySelectorAll('.btn');
     
     buttons.forEach(button => {
         button.addEventListener('click', function(e) {
-            // 创建涟漪效果
             const ripple = document.createElement('span');
             ripple.classList.add('ripple');
             this.appendChild(ripple);
@@ -36,9 +68,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // 添加页面加载动画
-    const container = document.querySelector('.container');
-    setTimeout(() => {
-        container.style.opacity = '1';
-    }, 100);
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 }); 
