@@ -6,79 +6,65 @@
     <title>下载页面</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .back-button {
-            display: inline-block;
-            margin-bottom: 20px;
-            padding: 10px 15px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        
-        .back-button:hover {
-            background-color: #2980b9;
-        }
-        
         .download-section {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            margin-top: 20px;
+            margin-top: 30px;
         }
         
         .download-button {
             display: inline-block;
-            margin: 15px 0;
+            margin-top: 15px;
             padding: 12px 25px;
-            background-color: #2ecc71;
+            background-color: var(--primary-color);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
         }
         
         .download-button:hover {
-            background-color: #27ae60;
+            background-color: var(--primary-dark);
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>下载我们的应用</h1>
+        <header class="site-header">
+            <h1 class="site-title">下载中心</h1>
+            <p class="site-subtitle">选择适合您的版本</p>
         </header>
         
-        <main>
-            <a href="index.html" class="back-button">← 返回首页</a>
-            
-            <div class="download-section">
-                <h2>选择您的平台</h2>
+        <a href="index.html" class="link-card" style="width: 120px; margin-bottom: 30px;">
+            <div class="link-card-icon">←</div>
+            <div class="link-card-text">返回首页</div>
+        </a>
+        
+        <section class="section">
+            <h2 class="section-title">选择您的平台</h2>
+            <div class="section-content">
                 <p>请选择适合您设备的版本下载安装</p>
                 
-                <div class="card-container">
-                    <div class="card">
-                        <div class="card-icon">📱</div>
-                        <h2>安卓版</h2>
-                        <p>适用于安卓手机和平板</p>
+                <div class="link-cards download-section">
+                    <div class="link-card" style="flex-direction: column; text-align: center;">
+                        <div class="link-card-icon" style="font-size: 3rem; margin: 0 0 15px 0;">📱</div>
+                        <div class="link-card-text" style="margin-bottom: 10px;">安卓版</div>
+                        <p style="margin-bottom: 15px; font-size: 0.9rem; color: var(--text-light);">适用于安卓手机和平板</p>
                         <a href="#" class="download-button">下载安卓版</a>
                     </div>
                     
-                    <div class="card">
-                        <div class="card-icon">💻</div>
-                        <h2>Windows版</h2>
-                        <p>适用于Windows电脑</p>
+                    <div class="link-card" style="flex-direction: column; text-align: center;">
+                        <div class="link-card-icon" style="font-size: 3rem; margin: 0 0 15px 0;">💻</div>
+                        <div class="link-card-text" style="margin-bottom: 10px;">Windows版</div>
+                        <p style="margin-bottom: 15px; font-size: 0.9rem; color: var(--text-light);">适用于Windows电脑</p>
                         <a href="#" class="download-button">下载Windows版</a>
                     </div>
                 </div>
             </div>
-        </main>
+        </section>
         
-        <footer>
-            <p>&copy; 2023 版权所有</p>
+        <footer class="site-footer">
+            <p>&copy; 2024 版权所有</p>
         </footer>
     </div>
 </body>

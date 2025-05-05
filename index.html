@@ -3,40 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>欢迎页面</title>
+    <title>首页</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>欢迎使用</h1>
+        <header class="site-header">
+            <h1 class="site-title">Welcome</h1>
+            <p class="site-subtitle">横看成岭侧成峰，远近高低各不同</p>
         </header>
-        
+
+        <nav class="site-nav">
+            <ul>
+                <li><a href="#intro">介绍</a></li>
+                <li><a href="#download">下载</a></li>
+                <li><a href="#tutorial">教程</a></li>
+                <li><a href="#contact">联系</a></li>
+            </ul>
+        </nav>
+
         <main>
-            <div class="card-container">
-                <div class="card" onclick="location.href='download.html'">
-                    <div class="card-icon">📥</div>
-                    <h2>下载</h2>
-                    <p>点击这里下载我们的应用</p>
+            <section id="intro" class="section">
+                <h2 class="section-title">介绍</h2>
+                <div class="section-content">
+                    <p>欢迎使用我们的应用。这里是一个简洁的导航页面，为您提供下载和教程的入口。</p>
                 </div>
-                
-                <div class="card" id="tutorial-card">
-                    <div class="card-icon">🎬</div>
-                    <h2>视频教程</h2>
-                    <p>查看如何使用我们的应用</p>
-                    <div class="dropdown-content">
-                        <a href="android-tutorial.html">安卓教程</a>
-                        <a href="pc-tutorial.html">电脑教程</a>
+            </section>
+
+            <section id="download" class="section">
+                <h2 class="section-title">下载</h2>
+                <div class="section-content">
+                    <div class="link-cards">
+                        <a href="download.html" class="link-card">
+                            <div class="link-card-icon">📱</div>
+                            <div class="link-card-text">安卓版下载</div>
+                        </a>
+                        <a href="download.html" class="link-card">
+                            <div class="link-card-icon">💻</div>
+                            <div class="link-card-text">电脑版下载</div>
+                        </a>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <section id="tutorial" class="section">
+                <h2 class="section-title">教程</h2>
+                <div class="section-content">
+                    <div class="link-cards">
+                        <a href="android-tutorial.html" class="link-card">
+                            <div class="link-card-icon">📱</div>
+                            <div class="link-card-text">安卓教程</div>
+                        </a>
+                        <a href="pc-tutorial.html" class="link-card">
+                            <div class="link-card-icon">💻</div>
+                            <div class="link-card-text">电脑教程</div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <h2 class="section-title">联系我们</h2>
+                <div class="section-content">
+                    <p>如有任何问题，请随时联系我们</p>
+                    <div class="contact-info">
+                        <p>Email: contact@example.com</p>
+                    </div>
+                </div>
+            </section>
         </main>
-        
-        <footer>
-            <p>&copy; 2023 版权所有</p>
+
+        <footer class="site-footer">
+            <p>&copy; 2024 版权所有</p>
         </footer>
     </div>
-    
-    <script src="script.js"></script>
 </body>
 </html> 

@@ -5,46 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>电脑教程</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9比例 */
+            height: 0;
+            margin: 30px 0;
+            background-color: var(--background-color);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--background-color);
+            color: var(--text-light);
+            font-size: 1.2rem;
+        }
+        
+        .step {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .step:last-child {
+            border-bottom: none;
+        }
+        
+        .step h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>电脑版使用教程</h1>
+        <header class="site-header">
+            <h1 class="site-title">电脑版使用教程</h1>
+            <p class="site-subtitle">轻松学会使用我们的应用</p>
         </header>
         
-        <main>
-            <a href="index.html" style="display:inline-block; margin-bottom:20px; padding:10px 15px; background-color:#3498db; color:white; text-decoration:none; border-radius:5px;">← 返回首页</a>
-            
-            <div style="background-color:white; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); padding:30px; margin-top:20px;">
-                <h2>如何使用我们的电脑应用</h2>
-                <p>跟随以下视频和步骤，轻松学会使用</p>
+        <a href="index.html" class="link-card" style="width: 120px; margin-bottom: 30px;">
+            <div class="link-card-icon">←</div>
+            <div class="link-card-text">返回首页</div>
+        </a>
+        
+        <section class="section">
+            <h2 class="section-title">如何使用我们的电脑应用</h2>
+            <div class="section-content">
+                <p>跟随以下视频和步骤，快速掌握使用技巧</p>
                 
-                <div style="margin:30px 0;">
-                    <!-- 视频嵌入位置 -->
-                    <p style="text-align:center; padding:20px; background:#f5f5f5; border-radius:8px;">视频教程将在此处显示</p>
+                <div class="video-container">
+                    <!-- 这里替换成真实的视频嵌入代码 -->
+                    <div class="video-placeholder">视频教程将在此处显示</div>
                 </div>
                 
-                <div style="margin-top:30px;">
-                    <div style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #f1f1f1;">
+                <div class="tutorial-steps">
+                    <div class="step">
                         <h3>1. 下载并安装程序</h3>
                         <p>从我们的官网下载Windows版安装包，双击运行并按照提示完成安装。</p>
                     </div>
                     
-                    <div style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #f1f1f1;">
+                    <div class="step">
                         <h3>2. 启动程序</h3>
                         <p>从桌面或开始菜单找到程序图标并点击启动，然后进行初始设置。</p>
                     </div>
                     
-                    <div style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #f1f1f1;">
-                        <h3>3. 基本操作</h3>
+                    <div class="step">
+                        <h3>3. 界面介绍</h3>
+                        <p>了解程序的菜单栏、工具栏和主要功能区域。</p>
+                    </div>
+                    
+                    <div class="step">
+                        <h3>4. 基本操作</h3>
                         <p>学习如何使用软件的基本功能和常用操作。</p>
+                    </div>
+                    
+                    <div class="step">
+                        <h3>5. 高级功能</h3>
+                        <p>探索更多高级功能和自定义设置选项。</p>
                     </div>
                 </div>
             </div>
-        </main>
+        </section>
         
-        <footer>
-            <p>&copy; 2023 版权所有</p>
+        <footer class="site-footer">
+            <p>&copy; 2024 版权所有</p>
         </footer>
     </div>
 </body>

@@ -6,35 +6,15 @@
     <title>安卓教程</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .back-button {
-            display: inline-block;
-            margin-bottom: 20px;
-            padding: 10px 15px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        
-        .back-button:hover {
-            background-color: #2980b9;
-        }
-        
-        .tutorial-section {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            margin-top: 20px;
-        }
-        
         .video-container {
             position: relative;
             width: 100%;
             padding-bottom: 56.25%; /* 16:9比例 */
             height: 0;
             margin: 30px 0;
+            background-color: var(--background-color);
+            border-radius: 10px;
+            overflow: hidden;
         }
         
         .video-container iframe {
@@ -43,40 +23,58 @@
             left: 0;
             width: 100%;
             height: 100%;
-            border-radius: 8px;
-        }
-        
-        .tutorial-steps {
-            margin-top: 30px;
         }
         
         .step {
             margin-bottom: 20px;
             padding-bottom: 20px;
-            border-bottom: 1px solid #f1f1f1;
+            border-bottom: 1px solid var(--border-color);
         }
         
         .step:last-child {
             border-bottom: none;
         }
+        
+        .step h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--background-color);
+            color: var(--text-light);
+            font-size: 1.2rem;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>安卓版使用教程</h1>
+        <header class="site-header">
+            <h1 class="site-title">安卓版使用教程</h1>
+            <p class="site-subtitle">轻松学会使用我们的应用</p>
         </header>
         
-        <main>
-            <a href="index.html" class="back-button">← 返回首页</a>
-            
-            <div class="tutorial-section">
-                <h2>如何使用我们的安卓应用</h2>
-                <p>跟随以下视频和步骤，轻松学会使用</p>
+        <a href="index.html" class="link-card" style="width: 120px; margin-bottom: 30px;">
+            <div class="link-card-icon">←</div>
+            <div class="link-card-text">返回首页</div>
+        </a>
+        
+        <section class="section">
+            <h2 class="section-title">如何使用我们的安卓应用</h2>
+            <div class="section-content">
+                <p>跟随以下视频和步骤，快速掌握使用技巧</p>
                 
                 <div class="video-container">
                     <!-- 这里替换成真实的视频嵌入代码 -->
-                    <iframe src="about:blank" frameborder="0" allowfullscreen></iframe>
+                    <div class="video-placeholder">视频教程将在此处显示</div>
                 </div>
                 
                 <div class="tutorial-steps">
@@ -101,10 +99,10 @@
                     </div>
                 </div>
             </div>
-        </main>
+        </section>
         
-        <footer>
-            <p>&copy; 2023 版权所有</p>
+        <footer class="site-footer">
+            <p>&copy; 2024 版权所有</p>
         </footer>
     </div>
 </body>
