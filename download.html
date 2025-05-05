@@ -3,86 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>下载页面</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>下载应用</title>
+    <link rel="stylesheet" href="css/style.css">
     <style>
         .download-section {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .download-options {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .download-option {
-            background-color: white;
+            background: white;
+            padding: 2rem;
             border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
         }
         
         .download-btn {
-            background-color: #27ae60;
+            margin-top: 1.5rem;
             font-size: 1.2rem;
-            padding: 15px 30px;
-            margin-top: 10px;
+            padding: 1rem 2rem;
         }
         
-        .download-btn:hover {
-            background-color: #219653;
+        .back-btn {
+            margin-top: 2rem;
+            background: transparent;
+            color: var(--dark-color);
+            border: 1px solid var(--dark-color);
         }
         
-        .back-link {
-            display: inline-block;
-            margin-top: 30px;
-            color: #3498db;
-            text-decoration: none;
-        }
-        
-        .back-link:hover {
-            text-decoration: underline;
+        .back-btn:hover {
+            background: rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>下载页面</h1>
-        </header>
+        <div class="header">
+            <h1 class="title">下载应用</h1>
+            <p class="subtitle">获取最新版本</p>
+        </div>
         
-        <main>
-            <div class="download-section">
-                <h2>选择下载版本</h2>
-                <p>请选择适合您设备的版本进行下载</p>
-                
-                <div class="download-options">
-                    <div class="download-option">
-                        <h3>安卓版本</h3>
-                        <p>适用于安卓手机和平板</p>
-                        <button class="btn download-btn">下载安卓版(.apk)</button>
-                    </div>
-                    
-                    <div class="download-option">
-                        <h3>Windows版本</h3>
-                        <p>适用于Windows 7/8/10/11</p>
-                        <button class="btn download-btn">下载Windows版(.exe)</button>
-                    </div>
-                </div>
-                
-                <a href="index.html" class="back-link">返回首页</a>
-            </div>
-        </main>
+        <div class="download-section">
+            <h2>最新版本: v1.0.0</h2>
+            <p>发布日期: 2023年12月1日</p>
+            <p>文件大小: 15MB</p>
+            <a href="#" class="btn download-btn">立即下载</a>
+        </div>
         
-        <footer>
-            <p>&copy; 2023 版权所有</p>
-        </footer>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="index.html" class="btn back-btn">返回首页</a>
+        </div>
     </div>
-    
-    <script src="script.js"></script>
+
+    <footer>
+        <p>© 2023 版权所有</p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html> 

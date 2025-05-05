@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+:root {
+    --primary-color: #4a6bdf;
+    --secondary-color: #33d9b2;
+    --dark-color: #34495e;
+    --light-color: #f5f6fa;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--dark-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    transition: opacity 0.5s ease;
+}
+
+/* 页面加载和过渡动画 */
+body.loaded {
+    animation: fadeIn 1s ease-in-out;
+}
+
+body.page-transition {
+    opacity: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeIn 1s ease-in-out;
+    position: relative;
+    z-index: 10;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    opacity: 0.8;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.option-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    width: 300px;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.option-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.download {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.tutorial {
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+.option-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.icon-download:before {
+    content: "⬇️";
+}
+
+.icon-video:before {
+    content: "🎬";
+}
+
+.option-card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.option-card p {
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+    opacity: 0.7;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background: #3a57c0;
+    transform: scale(1.05);
+}
+
+.sub-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    transition: var(--transition);
+    max-height: 0;
+    opacity: 0;
+}
+
+.sub-options.active {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.sub-btn {
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--dark-color);
+}
+
+.sub-btn:hover {
+    background: white;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+    color: var(--dark-color);
+    opacity: 0.7;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 10;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.option-card {
+    animation: slideIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.download {
+    animation-delay: 0.3s;
+}
+
+.tutorial {
+    animation-delay: 0.6s;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 子选项弹出动画 */
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 粒子效果 */
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    animation: float linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .option-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+} 

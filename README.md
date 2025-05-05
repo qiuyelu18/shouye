@@ -1,54 +1,58 @@
-# 简易导航页面
+# 跳转导航首页
 
-这是一个简单的导航页面，用于引导用户到下载页面或查看视频教程。
+这是一个简单而动态的网页首页，用于提供不同功能的跳转导航。用户可以通过此界面选择跳转到下载界面或视频教程（包括安卓教程和电脑教程）。
 
-## 文件结构
+## 特点
+
+- 响应式设计，适配手机和电脑
+- 动态UI效果，包括粒子背景、过渡动画等
+- 简洁美观的界面设计
+- 易于部署和维护
+
+## 项目结构
 
 ```
 .
-├── index.html          # 首页
-├── styles.css          # 主样式文件
-├── script.js           # JavaScript脚本
-├── download.html       # 下载页面
-├── android-tutorial.html # 安卓教程页面
-├── pc-tutorial.html    # 电脑教程页面
-└── README.md           # 说明文件
+├── index.html           # 首页
+├── download.html        # 下载页
+├── tutorial-android.html  # 安卓教程页
+├── tutorial-pc.html     # 电脑教程页
+├── css/
+│   └── style.css        # 样式文件
+├── js/
+│   └── script.js        # JavaScript脚本
+└── README.md           # 项目文档
 ```
 
-## 使用GitHub Pages部署
+## 部署指南
 
-1. 在GitHub上创建新仓库
-2. 将所有文件上传到仓库
-3. 进入仓库设置 (Settings)
-4. 找到"Pages"选项
-5. 在"Source"下选择"main"分支
-6. 点击"保存"
+### 使用GitHub Pages部署
 
-几分钟后，您的网站将可通过`https://[你的用户名].github.io/[仓库名]`访问。
+1. 创建一个GitHub仓库
+2. 上传所有项目文件到仓库
+3. 前往仓库设置 (Settings)
+4. 滚动到GitHub Pages部分
+5. 在Source下选择main分支
+6. 点击Save按钮
+7. 等待几分钟，你的网站将会在显示的URL上线
+
+### 本地测试
+
+你可以在本地预览这个网站：
+
+1. 克隆仓库到本地
+```bash
+git clone https://github.com/你的用户名/你的仓库名.git
+```
+
+2. 使用浏览器打开`index.html`文件，或使用本地服务器工具如Live Server运行
 
 ## 自定义
 
-您可以根据需要修改以下文件：
+- 修改`style.css`文件可以自定义网站风格和颜色
+- 在`index.html`中可以修改按钮文本和链接地址
+- 替换视频教程页面中的占位符为实际视频嵌入代码
 
-- `index.html`: 更改首页内容和布局
-- `styles.css`: 修改网站样式和主题颜色
-- `download.html`: 更新下载链接
-- `android-tutorial.html`和`pc-tutorial.html`: 添加实际的视频链接和教程内容
+## 许可证
 
-## 添加视频
-
-要添加视频，请在各教程页面的`video-container`中插入YouTube或其他视频平台的嵌入代码。例如：
-
-```html
-<div class="video-container">
-    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-```
-
-## 更新下载链接
-
-在`download.html`中，更新下载按钮的链接：
-
-```html
-<button class="btn download-btn" onclick="window.location.href='你的下载链接'">下载安卓版(.apk)</button>
-``` 
+MIT许可证 
